@@ -1,0 +1,54 @@
+< class="container">
+  <div class="row">
+    Add new résidence
+  </div>
+  <form class="row">
+    <form [formGroup]="Album">
+
+      <div class="mb-3">
+        <label>Tile :  </label>
+        <input class="form-control" formControlName="titre">
+      </div>
+      <div class="alert alert-danger"
+           *ngIf="titre!.invalid && (titre!.touched || titre!.dirty)">
+        <div *ngIf="titre!.hasError('required')">title is required !</div>
+
+
+      </div>
+      <div class="mb-3">
+        <label>Photo de couverture </label>
+        <input class="form-control" formControlName="coverPicture">
+      </div>
+
+      <div  *ngIf="coverPicture!.hasError('minlength')">
+        coverPicture must have at least 5 characters !</div>
+
+
+
+
+
+      <div class="mb-3">
+        <label>creationDate :</label>
+        <input class="form-control" formControlName="creationDate">
+      </div>
+
+      <div class="mb-3">
+        <label>archived : </label>
+        <input class="form-control" formControlName="achived">
+      </div>
+
+      <div class="mb-3">
+        <label>photos :</label>
+        <input class="form-control" formControlName="photos">
+      </div>
+
+
+
+      <div class="mb-3">
+        <input type="submit" class="btn btn-outline-primary" (click)="add()"
+               value="Add Album" [disabled]="Album.invalid">
+      </div>
+    </form>
+
+  </form>
+

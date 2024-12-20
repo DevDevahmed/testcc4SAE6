@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th></th>
+    <th>ID</th>
+    <th>TITRE</th>
+    <th>img</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!-- Loop over residences and display each row -->
+  <tr *ngFor="let r of filterByArchived()">
+    <!-- Image of the residence -->
+
+    <!-- Displaying the ID of the residence -->
+    <td>{{r.id}}</td>
+    <!-- Displaying the name of the residence in uppercase -->
+    <td>{{r.title|uppercase}}</td>
+
+    <td>{{r.title|uppercase}}</td>
+
+    <td><img [src]='r.coverPicture' width="50" height="50"></td>
+
+  </tr>
+  </tbody>
+</table>
